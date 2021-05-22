@@ -34,7 +34,11 @@ import { RegisterComponent } from './register/register.component';
     BrowserAnimationsModule,
     FormsModule,
     BsDropdownModule.forRoot(),
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 1000,
+      positionClass: "toast-bottom-right",
+      preventDuplicates: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
