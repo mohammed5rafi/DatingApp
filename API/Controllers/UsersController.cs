@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers
 {
 
-
+  [Authorize]
     public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
@@ -21,14 +21,14 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
+      
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUser(){
             
              return await  _context.User.ToListAsync();
            
            
         }
-      [Authorize]
+    
          [HttpGet("{Id}")]
         public async Task<ActionResult<AppUser>> GetUser(int id){
             
